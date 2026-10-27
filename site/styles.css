@@ -181,7 +181,7 @@ main:focus-visible {
   height: 100svh;
   min-height: 820px;
   isolation: isolate;
-  background: #e5dbcc url("assets/background-scene.png") center / cover no-repeat;
+  background: #e5dbcc url("assets/background-scene.png") center bottom / cover no-repeat;
 }
 
 .orb-figure {
@@ -192,10 +192,11 @@ main:focus-visible {
 }
 
 .orb-image {
+  --orb-size: min(49vw, 650px, 72svh);
   position: absolute;
-  top: 8%;
+  top: max(8%, calc(100svh - 18.3vw + 60px - var(--orb-size)));
   left: 4.5%;
-  width: min(49vw, 650px);
+  width: var(--orb-size);
   max-width: 650px;
   aspect-ratio: 1;
 }
